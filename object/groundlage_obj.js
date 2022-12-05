@@ -15,4 +15,5 @@ let konto_1 = {
 
 };
 
+
 console.log(konto_1);
