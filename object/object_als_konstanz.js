@@ -1,5 +1,5 @@
 "use strict"
-
+//mit const können wir eigenschaft ändern
 const person ={
     vorname:"maryam",
     nachname:"shabanzadeh",
