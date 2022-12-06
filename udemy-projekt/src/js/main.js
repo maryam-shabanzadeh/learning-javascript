@@ -40,6 +40,7 @@ Datum: ${this.neuer_eintrag.datum} `);
                 break;
             default:
                 console.log(`Der Type"${this.neuer_eintrag.type} ist nicht bekannt`);
+                break;
             
 
         }
@@ -63,6 +64,7 @@ ausgeben_gesamtbilanz() {
     console.log(
         `Einnahmen: ${this.gesamtbilanz.einnahmen} ct
         Ausgaben: ${this.gesamtbilanz.ausgaben} ct
+        Bilanz: ${this.gesamtbilanz.bilanz} ct
         Bilanz ist positive: ${this.gesamtbilanz.bilanz>=0}`
     
     );
