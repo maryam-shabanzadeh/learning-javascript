@@ -29,15 +29,32 @@ Betrag: ${this.neuer_eintrag.betrag} ct
 Datum: ${this.neuer_eintrag.datum} `);
     },
     eintag_mit_gesamtbilanz(){
-        if (this.neuer_eintrag.type == "Einnahme"){
-            this.gesamtbilanz.einnahmen+=this.gesamtbilanz.betrag;
-            this.gesamtbilanz.bilanz += this.neuer_eintrag.betrag;
+        switch(this.neuer_eintrag.type){
+            case "Einnahme":
+                this.gesamtbilanz.einnahmen+=this.gesamtbilanz.betrag;
+                this.gesamtbilanz.bilanz += this.neuer_eintrag.betrag;
+                break;
+            case "Ausgabe":
+                this.gesamtbilanz.ausgaben+=this.neuer_eintrag.betrag;
+                this.gesamtbilanz.bilanz -=this.neuer_eintrag.betrag;
+                break;
+            default:
+                console.log(`Der Type"${this.neuer_eintrag.type} ist nicht bekannt`);
+            
+
         }
-        else{
-            this.gesamtbilanz.ausgaben+=this.neuer_eintrag.betrag;
-            this.gesamtbilanz.bilanz -=this.neuer_eintrag.betrag;
-        } 
-},
+    },
+
+//     eintag_mit_gesamtbilanz(){
+//         if (this.neuer_eintrag.type == "Einnahme"){
+//             this.gesamtbilanz.einnahmen+=this.gesamtbilanz.betrag;
+//             this.gesamtbilanz.bilanz += this.neuer_eintrag.betrag;
+//         }
+//         else{
+//             this.gesamtbilanz.ausgaben+=this.neuer_eintrag.betrag;
+//             this.gesamtbilanz.bilanz -=this.neuer_eintrag.betrag;
+//         } 
+// },
 
 
 ausgeben_gesamtbilanz() { 
